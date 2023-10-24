@@ -54,13 +54,16 @@ function ResponsiveHeader() {
     <>
       <Box
         p={6}
-        sx={{ background: "white", borderBottom: "1px solid #DFDFE3" }}
+        position={"fixed"}
+        w={"100%"}
+        sx={{ background: "white",zIndex:"100", borderBottom: "1px solid #DFDFE3" }}
       >
-        <Flex  alignItems="center" justifyContent="space-between">
-        <Flex  spacing={"20px"} w={{ base: "auto", md: "55%" }} alignItems="center" justifyContent="space-between">
-          <Box sx={{ display: "flex" }}>
+        <Flex  alignItems="center" >
+          <Box sx={{mr:"269px",  display: "flex" }}>
             <LogoSvg />
           </Box>
+          <Flex w={"100%"}  alignItems="center" justifyContent="space-between">
+        <Flex  spacing={"20px"} w={{ base: "auto", md: "55%" }} alignItems="center" justifyContent="space-between">
           <Box
           display={{base:"none", md:"flex"}}
           w={{base:"auto", md:"600px"}}
@@ -395,6 +398,7 @@ function ResponsiveHeader() {
               aria-label="Open Menu"
             />
           </Box>
+        </Flex>
         </Flex>
 
         <Box display={{ base: isOpen ? "block" : "none", md: "none" }}>

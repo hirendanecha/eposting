@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import singupImg from "../assets/pngs/singupImg.png";
 import PublicLayout from "../Components/Layout/PublicLayout";
 import {
@@ -12,10 +12,15 @@ import {
   InputRightElement,
   Text,
 } from "@chakra-ui/react";
-import { FiEye, FiMail } from "react-icons/fi";
+import { FiEye, FiEyeOff, FiMail } from "react-icons/fi";
 import LoginWithSocial from "../Components/LoginWithSocial";
+import { Link } from "react-router-dom";
 
 const SignupPage = () => {
+  const [showPassword, setShowPassword] = useState(false);
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
+  };
   return (
     <PublicLayout sideImage={singupImg}>
       <Box
@@ -49,7 +54,9 @@ const SignupPage = () => {
             <Text
               sx={{ fontSize: "18px", color: "#7367F0", cursor: "pointer" }}
             >
+             <Link to="/signin">
               Sign in
+              </Link>
             </Text>
           </Box>
 
@@ -90,7 +97,7 @@ const SignupPage = () => {
               </Text>
               <InputGroup>
                 <Input
-                  type="password"
+                   type={showPassword ? "text" : "password"}
                   placeholder="Password"
                   sx={{
                     borderColor: "#4B4B4B",
@@ -103,8 +110,12 @@ const SignupPage = () => {
                   size="lg"
                 />
 
-                <InputRightElement sx={{ h: "100%" }}>
-                  <FiEye color="#4B4B4B" />
+                <InputRightElement cursor={"pointer"} sx={{ h: "100%" }}>
+                {showPassword ? (
+            <FiEyeOff color="#4B4B4B" onClick={togglePasswordVisibility} />
+          ) : (
+            <FiEye color="#4B4B4B" onClick={togglePasswordVisibility} />
+          )}
                 </InputRightElement>
               </InputGroup>
             </Box>

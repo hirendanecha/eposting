@@ -57,13 +57,33 @@ const JobMarketPlace = () => {
   return (
     <>
       <HomePage />
-      <Box p={6} sx={{ background: "#F8F7FA", minH: "100vh" }} minH={"100vh"}>
-        <Grid  templateColumns={{ base: '1fr', sm: '1fr 1fr', lg: '400px 1fr 400px' }} gap={4}>
-          <GridItem>
+      <Box p={6} pt={"115px"} sx={{ background: "#F8F7FA", minH: "100vh" }} minH={"100vh"}>
+        <Grid  templateColumns={{ base: '1fr', lg: '400px 1fr 400px' }} gap={4}>
+          <GridItem  h={{ base:"auto", lg: "88vh"}} >
+            <Box overflowY={{ lg: 'auto'}} sx={{
+    maxHeight: '100%',
+    '&::-webkit-scrollbar': {
+      width: '2px',
+    },
+    '&::-webkit-scrollbar-thumb': {
+      backgroundColor: 'rgba(0, 0, 0, 0.2)',
+    },
+    '&::-webkit-scrollbar-track': {
+      backgroundColor: 'transparent', 
+    },
+    '&::-webkit-scrollbar-thumb:hover': {
+      backgroundColor: 'rgba(0, 0, 0, 0.4)', 
+    },
+    '&::-webkit-scrollbar-button': {
+      display: 'none', 
+    }, }}>
+
+            
             <Box
               sx={{
                 h: "406px",
                 background: "#ffffff",
+               
                 borderRadius: "8px",
                 mb: "32px",
               }}
@@ -405,6 +425,7 @@ const JobMarketPlace = () => {
               </Box>
               <hr />
             </Box>
+            </Box>
           </GridItem>
           <GridItem>
             <Box mb={4}>
@@ -565,12 +586,27 @@ const JobMarketPlace = () => {
           </GridItem>
           <GridItem
             mb={"26px"}
-            // overflowY={"auto"}
             gap={"32px"}
-
+            h={{ base:"auto", lg: "88vh"}}
             gridGap={"32px"}
             borderRadius={"8px"}
           >
+             <Box overflowY={{  lg: 'auto'}} sx={{ maxHeight: '100%',
+    '&::-webkit-scrollbar': {
+      width: '2px',
+    },
+    '&::-webkit-scrollbar-thumb': {
+      backgroundColor: 'rgba(0, 0, 0, 0.2)', // Customize scrollbar thumb color (for webkit browsers)
+    },
+    '&::-webkit-scrollbar-track': {
+      backgroundColor: 'transparent', // Customize scrollbar track color (for webkit browsers)
+    },
+    '&::-webkit-scrollbar-thumb:hover': {
+      backgroundColor: 'rgba(0, 0, 0, 0.4)', // Customize scrollbar thumb color on hover (for webkit browsers)
+    },
+    '&::-webkit-scrollbar-button': {
+      display: 'none', // Hide scrollbar buttons (for webkit browsers)
+    }, }}>
             <Box bg={"white"} h={612} sx={{ borderRadius: "8px 8px 0px 0px" }}>
               <Box sx={{ borderRadius: "8px" }} bg="rgb(115,104,231)">
                 <Box
@@ -1038,6 +1074,7 @@ const JobMarketPlace = () => {
                 </Box>
                 <hr />
               </Box>
+            </Box>
             </Box>
 
 
